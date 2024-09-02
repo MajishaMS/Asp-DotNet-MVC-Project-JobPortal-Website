@@ -1,0 +1,46 @@
+﻿@model JobCircle.Models.UserProfile
+@{
+    ViewBag.Title = "Userfile_PageLoad";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+<div class="jumbotron">
+
+    <center>
+        <div class="panel panel-info" style="width:300px;">
+            <h2>Profile Details</h2>
+            @using (Html.BeginForm("Userfile_Update", "UserProfile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div><label>Photo:</label></div>
+                <div>
+                    @Html.TextBox("file2", "", new { Type = "file" })
+                </div>
+
+                <div><label>Resume:</label></div>
+                <div>
+                    @Html.TextBox("file3", "", new { Type = "file" })
+                </div>
+                <div>
+                    <input type="submit" value="Update" class="form-control btn-success" />
+                    @Html.DisplayFor(m => m.msg)
+                </div>
+
+            }
+            <div>
+
+                @Html.ActionLink("Back to home page", "UserHome", "UserLogin")
+
+
+            </div>
+        </div>
+        </center>
+    </div>

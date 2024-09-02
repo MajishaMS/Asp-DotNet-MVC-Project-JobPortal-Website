@@ -1,0 +1,93 @@
+﻿@model JobCircle.Models.CompanyJob
+@{
+    ViewBag.Title = "CompanyJob_PageLoad";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+@using (Html.BeginForm("CompanyJob_Click", "CompanyJob"))
+{
+    @*<div><label>Category Name</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.cna, new { placeholder = "Category name", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.cna)
+    </div>
+
+
+
+    @*<div><label>Job Name</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jna, new { placeholder = "Job name", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jna)
+    </div>
+
+    @*<div><label>Job Type</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jty, new { placeholder = "Job type", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jty)
+    </div>
+
+    @*<div><label>Location</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jloc, new { placeholder = "Job location", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jloc)
+    </div>
+
+    @*<div><label>Total Vacancy</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jvno, new { placeholder = "Total vacancy", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jvno)
+    </div>
+
+    @*<div><label>Qualificaion</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jqua, new { placeholder = "Qualification", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jqua)
+    </div>
+    @*<div><label>Experience</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jexp, new { placeholder = "Experience", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jexp)
+    </div>
+
+    @*<div><label>Skills</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jskl, new { placeholder = "Skills", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jskl)
+    </div>
+
+    @*<div><label>PayScale</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jpay, new { placeholder = "Payscale", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jpay)
+    </div>
+    @*<div><label>Opening date</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jopda, new { placeholder = "Opening Date", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jopda)
+    </div>
+    @*<div><label>Closing Date</label></div>*@
+    <div>
+        @Html.TextBoxFor(m => m.jclsda, new { placeholder = "Closing date", @class = "form-control text - muted" })
+        @Html.ValidationMessageFor(m => m.jclsda)
+    </div>
+
+
+    <div>
+        <input type="submit" value="Insert" />
+        @Html.DisplayFor(m => m.msg)
+    </div>
+    @Html.ActionLink("Back", "CompanyHome", "UserLogin")
+}
+
+
+
+
+

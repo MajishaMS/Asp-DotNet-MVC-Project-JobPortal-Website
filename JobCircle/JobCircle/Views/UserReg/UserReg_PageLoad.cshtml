@@ -1,0 +1,140 @@
+﻿@model JobCircle.Models.UserReg
+@{
+    ViewBag.Title = "UserReg_PageLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<div class="jumbotron">
+
+    <center>
+        <div class="panel panel-info" style="width:300px;">
+            <h2>Registration</h2>
+            <div>
+
+                @using (Html.BeginForm("UserReg_Click", "UserReg", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @*<div><label>Name</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.na, new { placeholder = "Enter Name", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.na)
+                    </div>
+
+
+
+                    @*<div><label>Age</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.ag, new { @Value = (Model.pin > 0 ? Model.pin.ToString() : string.Empty), placeholder = "Enter Age", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.ag)
+                    </div>
+
+                    <div><label>Gender:</label></div>
+                    <div>
+                        Male
+                        @Html.RadioButtonFor(m => m.gen, "male")
+                        Female
+                        @Html.RadioButtonFor(m => m.gen, "female")
+                    </div>
+
+
+                    @*<div><label>Address</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.add, new { placeholder = "Enter Address", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.add)
+                    </div>
+
+                    @*<div><label>District</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.dist, new { placeholder = "Enter District", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.dist)
+                    </div>
+
+                    @*<div><label>State</label></div>*@
+                    <div>
+
+                        @Html.DropDownList("ddlstates", (SelectList)ViewBag.Selstates, "--select State--", new { @class = "form-control" })
+
+                    </div>
+
+                    @*<div><label>Pincode</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.pin, new { @Value = (Model.pin > 0 ? Model.pin.ToString() : string.Empty), placeholder = "Enter Pincode", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.pin)
+                    </div>
+
+                    @*<div><label>Phone</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.ph, new { @Value = (Model.pin > 0 ? Model.pin.ToString() : string.Empty), placeholder = "Enter Phone number", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.ph)
+                    </div>
+
+                    @*<div><label>Email</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.em, new { placeholder = "Enter Email", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.em)
+                    </div>
+                    <div><label>Photo:</label></div>
+                    <div>
+                        @Html.TextBox("file", "", new { Type = "file" })
+                    </div>
+                    <div><label>Qualification</label></div>
+                    <div>
+
+                        @foreach (var item in Model.MyFavQual)
+                        {
+                            <label>
+                                <input type="checkbox" value="@item.value" checked="@item.IsChecked" name="selectedQual" id="@item.value" /> @Html.Raw(@item.text)
+                            </label>
+                        }
+                    </div>
+                    @*<div><label>Experience(In Year)</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.exp, new { placeholder = "Enter Experience(In Year)", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.exp)
+                    </div>
+
+                    @*<div><label>Skills</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.skl, new { placeholder = "Enter Skills", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.skl)
+                    </div>
+                    <div><label>Resume:</label></div>
+                    <div>
+                        @Html.TextBox("file1", "", new { Type = "file" })
+                    </div>
+                    @*<div><label>uname</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.una, new { placeholder = "Enter UserName", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.una)
+                    </div>
+                    @*<div><label>password</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.pwd, new { placeholder = "Enter Password", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.pwd)
+                    </div>
+
+                    @*<div><label>Confirm password</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.cpwd, new { placeholder = "Confirm password", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.cpwd)
+                    </div>
+
+
+
+                    <div>
+                        <input type="submit" value="Register" class="form-control btn-success"/>
+                        @Html.DisplayFor(m => m.msg)
+                    </div>
+                }
+            </div>
+                    </div>
+                        </center>
+            </div>
+

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<JobCircle.Models.UserJobApplication>
+@{
+    ViewBag.Title ="UserJobApplication_PageLoad";
+}
+
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+@using (Html.BeginForm("UserJobApplication_PageLoad","UserJobApplication", FormMethod.Get))
+{
+    <table id="t01" class="table">
+
+
+        <tr>
+            
+            <th>Application Number</th>
+            <th>Job Id</th>
+            @*<th>Company id</th>*@
+            <th>Job Vacancy</th>
+           <th>Applicant Details</th>
+
+
+
+
+        </tr>
+        @foreach (var item in ViewBag.JobAPPdetails)
+        {
+    <tr>
+        <td>@item.JobApp_Id</td>
+        <td>@item.Job_Id</td>
+        @*<td>@item.Company_RegId</td>*@
+        <td>@item.Job_Name</td>
+
+        <td>
+
+            @Html.ActionLink("Click Here", "UserJobApplicatDetails_PageLoad", "UserJobApplicatDetails", new { uid = item.User_RegId }, null)
+           
+
+
+        </td>
+    </tr>
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Back to home page", "CompanyHome", "UserLogin")
+    </div>
+}

@@ -1,0 +1,175 @@
+﻿@model JobCircle.Models.JobSearch
+@{
+    ViewBag.Title = "CompanyJobDetails_PageLoad";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+    @*<center>*@
+       @* <div class="panel panel-info" style="width:300px;">*@
+
+            <h2>Job Details</h2>
+            @using (Html.BeginForm("CompanyJobDetails_Click", "CompanyJobDetails", FormMethod.Post))
+            {
+                <div>
+                    <table id="t01" class="table">
+                        <tr>
+
+                            <td>
+                                
+                                @Html.TextBoxFor(m => m.insetse.jskl, new { placeholder = "Enter Skills", @class = "form-control text - muted" })
+                                @* @Html.TextBoxfor("m=>m.insertse.jskl,new { @class = "form-control", @placeholder = "Search With Skills" })*@
+                            </td>
+
+                            <td>
+                                
+                                @Html.TextBoxFor(m => m.insetse.jexp, new { placeholder = "Enter Experience", @class = "form-control text - muted" })
+                                @*@Html.TextBox("experience", null, new { @class = "form-control", @placeholder = "Search With Experience" })*@
+                            </td>
+                            <td>
+                                
+                                @Html.TextBoxFor(m => m.insetse.jloc, new { placeholder = "Enter Location", @class = "form-control text - muted" })
+                                @*@Html.TextBox("location", null, new { @class = "form-control", @placeholder = "Search With Location" })*@
+                            </td>
+                            <td>
+                                <input type="submit" value="Search" class="form-control btn-success"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            }
+
+
+            @*@Html.ActionLink("Click here", "UserJobApply_PageLoad", "UserJobApply", new { jid = item.Job_Id, cid = item.Company_RegId, jname = item.Job_Name }, null)*@
+
+
+
+
+            <div>
+
+                @using (Html.BeginForm("CompanyJobDetails_PageLoad", "CompanyJobDetails", FormMethod.Get))
+                {
+                    if (Model != null)
+                    {
+                        if (Model.selectjob != null && Model.selectjob.Count != 0)
+                        {
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Company Name</th>
+                            <th> Category Name</th>
+                           
+                            <th>Vacancy</th>
+                            <th>JobType</th>
+                            <th>JobLocation</th>
+                            <th>Number of vacancy</th>
+                            <th>Qualification Required</th>
+                            <th>Experirence(in year)</th>
+                            <th>Skills</th>
+                            <th>Pay Scale</th>
+
+                            <th>Job Opening Date</th>
+                            <th>Job Closing Date</th>
+                            <th>Easily Appply</th>
+                            @*<th>
+
+                @Html.DisplayNameFor(m => m.insetse.cna)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jloc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jvno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jqua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jexp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jskl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jpay)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jopda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jclsda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.insetse.jst)
+            </th>*@
+
+                        </tr>
+                    </thead>
+                        @foreach (var item in Model.selectjob)
+                        {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.cname)</td>
+
+                    <td> @Html.DisplayFor(modelItem => item.cna)</td>
+                 
+                    <td> @Html.DisplayFor(modelItem => item.jna)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jty)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jloc)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jvno)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jqua)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jexp)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jskl)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jpay)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jopda)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jclsda)</td>
+                    <td> @Html.DisplayFor(modelItem => item.jst)</td>
+                    <td>
+
+                        @Html.ActionLink("Click here", "UserJobApply_PageLoad", "UserJobApply", new { jid = item.jid, cid = item.cid, jname = item.jna }, null)
+                    </td>
+
+                </tr>
+
+                        }
+                       
+                </table>
+                        }
+                        else
+                        {
+                            <script>
+                                alert('no datafound');
+                            </script>
+                        }
+                    }
+
+                }
+
+
+
+                <div>
+                    @Html.ActionLink("Back to home page", "UserHome", "UserLogin")
+                </div>
+            </div>
+           
+        @*</center>*@
+ 
+
+

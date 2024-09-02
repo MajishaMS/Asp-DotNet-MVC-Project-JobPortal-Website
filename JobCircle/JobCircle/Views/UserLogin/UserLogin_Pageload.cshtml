@@ -1,0 +1,64 @@
+﻿@model JobCircle.Models.UserLogin
+@{
+    ViewBag.Title = "UserLogin_Pageload";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<div class="jumbotron">
+   
+    <center>
+        <div class="panel panel-info" style="width:300px;">
+            <h2>Login With</h2>
+            <br />
+            <img src="~/PHS/logo.png" alt="Avatar Logo" style="width:80px;" class="rounded-pill">
+            <h5>JobCircle</h5>
+
+            <br />
+            <div>
+
+                @using (Html.BeginForm("UserLogin_Click", "UserLogin"))
+                {
+                    <div class="container mt-3 bg">
+                        <div class="row">
+                            <div class="col">
+                                @*<label>User Name:</label>*@
+
+                                @Html.TextBoxFor(m => m.una, new { placeholder = "Enter UserName", @class = "form-control text - muted" })
+
+                                @Html.ValidationMessageFor(m => m.una, "", new { @class = "text-danger" })
+                            </div>
+                            <br />
+                            <div class="col">
+                                @*<label>Password:</label>*@
+
+                                @Html.TextBoxFor(m => m.pass, new { placeholder = " Enter Password", @class = "form-control text - muted" })
+                                @Html.ValidationMessageFor(m => m.pass, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="submit" value="Login" class="form-control btn-success" />
+                            @Html.DisplayFor(m => m.msg)
+                        </div>
+                    </div>
+
+                }
+                <br />
+                @* @Html.ActionLink("Click for Register", "UserReg_Pageload", "UserReg")*@
+                @Html.ActionLink("Click for Register", "CompanyReg_Pageload", "CompanyReg")
+                <br />
+                <br />
+            </div>
+        </div>
+    </center>
+    
+</div>
+

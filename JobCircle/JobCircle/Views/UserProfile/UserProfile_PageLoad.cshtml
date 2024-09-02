@@ -1,0 +1,132 @@
+﻿@model JobCircle.Models.UserProfile
+@{
+    ViewBag.Title = "UserProfile_PageLoad";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<div class="jumbotron">
+
+    <center>
+        <div class="panel panel-info" style="width:300px;">
+            <h2>Profile Details</h2>
+
+            @using (Html.BeginForm("UserProfile_Update", "UserProfile", FormMethod.Post))
+            {
+                <div>
+                    <div><label>Photo:</label></div>
+                    <div>
+                        <img src="@Url.Content(Model.pto)" alt="hai" height="150" width="150" />
+
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>Name:</label></div>
+
+                    @Html.TextBoxFor(m => m.na, new { @class = "form-control text - muted" })
+
+
+                </div>
+
+                <div>
+                    <div><label>Age:</label></div>
+                    <div>
+                        @Html.TextBoxFor(m => m.ag, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+
+                <div>
+                    <div><label>Gender:</label></div>
+                    <div>
+                        @Html.TextBoxFor(m => m.gen, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+
+                <div>
+                    <div><label>Address:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.add, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>District:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.dist, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>State:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.st, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>Pincode:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.pin, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>Phone:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.ph, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>Email:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.em, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+
+                <div>
+                    <div><label>Qualification:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.qua, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>Experience:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.exp, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+                <div>
+                    <div><label>Skills:</label></div>
+                    <div>
+                        @Html.TextAreaFor(m => m.skl, new { @class = "form-control text - muted" })
+
+                    </div>
+                </div>
+
+                <div>
+                    <input type="submit" value="Update" />
+                    @Html.DisplayFor(m => m.msg)
+                </div>
+                <div>
+
+                    @Html.ActionLink("Back to home page", "UserHome", "UserLogin")
+
+
+                </div>
+            }
+        </div>
+        </center>
+    </div>

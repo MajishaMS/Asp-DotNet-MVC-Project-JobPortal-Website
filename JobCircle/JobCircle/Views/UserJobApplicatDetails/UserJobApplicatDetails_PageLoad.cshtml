@@ -1,0 +1,152 @@
+﻿@model JobCircle.Models.UserJobApplicatDetails
+@{
+    ViewBag.Title = "UserJobApplicatDetails_PageLoad";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+<h2></h2>
+<center>
+    <div class="panel panel-info" style="width:300px;">
+
+        @using (Html.BeginForm("UserJobApplicatDetails_Data", "UserJobApplicatDetails", FormMethod.Post))
+        {
+
+            <div>
+                <div>
+                    <label>Photo:</label>
+                    <img src="@Url.Content(Model.pto)" alt="hai" height="150" width="150" />
+
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Name:</label>
+
+                    @Html.DisplayFor(m => m.na)
+                    @*@Html.TextBoxFor(m => m.na)*@
+
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>Age:</label>
+                    @Html.DisplayFor(m => m.ag)
+
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>Gender:</label>
+                    @Html.DisplayFor(m => m.gen)
+
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>Address:</label>
+                    @Html.DisplayFor(m => m.add)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>District:</label>
+                    @Html.DisplayFor(m => m.dist)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>State:</label>
+                    @Html.DisplayFor(m => m.st)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Pincode:</label>
+                    @Html.DisplayFor(m => m.pin)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Phone:</label>
+                    @Html.DisplayFor(m => m.ph)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Email:</label>
+                    @Html.DisplayFor(m => m.em)
+
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>Qualification:</label>
+                    @Html.DisplayFor(m => m.qua)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Experience:</label>
+                    @Html.DisplayFor(m => m.exp)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Skills:</label>
+                    @Html.DisplayFor(m => m.skl)
+
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Resume:</label>
+                    @*@Html.ActionLink("Download Here", "DownloadExampleFiles", "UserJobApplicatDetails", new { rs = rs }, new { @target = "_blank" })*@
+
+                    @*@Html.ActionLink("Download Here", "Download_PageLoad", "DownloadExampleFiles", new { rs=Model.rs },null)*@
+                    @* @Html.ActionLink("Download ", "Download_PageLoad", "DownloadExampleFiles", new { rs = @Url.Content(@Model.rs) }, null)*@
+
+                    @* @Html.DisplayFor(m => m.rs)*@
+
+                    @Html.ActionLink("Download ", "Download_PageLoad", "DownloadExampleFiles", new { rs = Path.GetFileName(Model.rs) }, null)
+
+
+                </div>
+            </div>
+
+
+
+            @*<div>
+                    <input type="submit" value="Update" />
+                    @Html.DisplayFor(m => m.msg)
+                </div>*@
+            <div>
+
+                @Html.ActionLink("Back to home page", "CompanyHome", "UserLogin")
+
+
+            </div>
+
+        }
+
+    </div>
+</center>

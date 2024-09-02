@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "UserHome";
+}
+
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<div class="jumbotron">
+
+    <center>
+        <div class="panel panel-info">
+            <h2>Welcome To</h2>
+            <br />
+            <img src="~/PHS/logo.png" alt="Avatar Logo" style="width:80px;" class="rounded-pill">
+            <h5>JobCircle</h5>
+
+            <br />
+
+
+            <div>
+                @Html.ActionLink("View and Update Profile", "UserProfile_PageLoad", "UserProfile")
+            </div>
+            <div>
+            @Html.ActionLink("Update Profile photo and Resume", "Userfile_PageLoad", "UserProfile")
+        </div>
+            <br />
+            @*<div>
+            @Html.ActionLink("Change Password", "Pwd_Load", "PwdChang")
+        </div>*@
+            <div>
+                @Html.ActionLink("View Job Vacancies", "CompanyJobDetails_PageLoad", "CompanyJobDetails")
+            </div>
+            <br />
+            <div></div>
+
+            @Html.ActionLink("Logout", "UserLogin_Pageload", "UserLogin")
+            <div></div>
+        </div>
+
+    </center>
+</div>

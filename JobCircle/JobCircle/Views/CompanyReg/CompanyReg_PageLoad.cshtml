@@ -1,0 +1,88 @@
+﻿@model JobCircle.Models.CompanyReg
+@{
+    ViewBag.Title = "CompanyReg_PageLoad";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<div class="jumbotron">
+
+    <center>
+        <div class="panel panel-info" style="width:300px;">
+            <h2>Registration</h2>
+            <div>
+
+                @using (Html.BeginForm("CompanyReg_Click", "CompanyReg"))
+                {
+                    @*<div><label>Name</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.na, new { placeholder = "Enter Name", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.na)
+                    </div>
+
+
+
+
+
+                    @*<div><label>Address</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.add, new { placeholder = "Enter Address", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.add)
+                    </div>
+
+
+
+                    @*<div><label>Phone</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.ph, new { placeholder = "Enter Phone", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.ph)
+                    </div>
+
+                    @*<div><label>Email</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.em, new { placeholder = "Enter Email", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.em)
+                    </div>
+
+                    @*<div><label>website</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.wb, new { placeholder = "Enter Website", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.wb)
+                    </div>
+
+                    @*<div><label>UserName</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.una, new { placeholder = "Enter Username", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.una)
+                    </div>
+                    @*<div><label>password</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.pwd, new { placeholder = "Enter Passwrd", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.pwd)
+                    </div>
+
+                    @*<div><label>Confirm password</label></div>*@
+                    <div>
+                        @Html.TextBoxFor(m => m.cpwd, new { placeholder = "Confirm password", @class = "form-control text - muted" })
+                        @Html.ValidationMessageFor(m => m.cpwd)
+                    </div>
+
+
+
+                    <div>
+                        <input type="submit" value="Register" class="form-control btn-success"/>
+                        @Html.DisplayFor(m => m.msg)
+                    </div>
+                }
+                </div>
+
+                </div>
+            </center>
+            </div>
+
